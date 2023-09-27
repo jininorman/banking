@@ -1,0 +1,95 @@
+@import url("https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900");
+ *{
+  margin: 0;
+  padding: 0;
+  box-sizing:border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body{
+background-image:url(../images/slide-02.jpg);
+align-items:center;
+justify-content:center;
+}
+
+.container form{
+position:relative;
+border-radius:6px
+display:flex;
+margin-left:220px;
+background:white;
+height:100%;
+width:80%;
+max-width:850px;
+}
+
+.container h3{
+font-size:2.5rem;
+font-weight:500;
+margin-bottom:10px;
+/*background:black;*/
+display:flex;
+align-items:center;
+justify-content:center;
+text-transform:uppercase;
+font-family:Monospace;
+color:black;
+}
+
+.form-label{
+margin-top:15px;
+}
+
+
+.form-check{
+float:left;
+width:auto;
+margin-left: 2em;
+}
+
+button.btn-primary{
+border-radius:10px;
+padding: 5px 10px;
+background-color:blue;
+text-transform: uppercase;
+background-position:right center;
+outline: none;
+border: none;
+cursor: pointer;
+font-size: 16px;
+color: white;
+font-weight: 600;
+letter-spacing: 2px;
+position:relative;
+top:10px;
+left:10px;
+}
+
+a.btn-primary{
+border-radius:10px;
+padding: 5px 10px;
+background-color:red;
+text-transform: uppercase;
+background-position:right center;
+outline: none;
+border: none;
+cursor: pointer;
+font-size: 16px;
+color: white;
+font-weight: 600;
+letter-spacing: 2px;
+position:relative;
+top:-24.5px;
+margin-left:730px;
+}
+
+button.btn-primary:hover
+{
+background-color:green;
+
+}
+
+a.btn-primary:hover
+{
+background-color:#7d7d7d;
+}

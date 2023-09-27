@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="{% static 'css/form.css' %}">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+<body>
+<div class="container">
+<form action="open" class="row g-3" method="post">
+  {% csrf_token %}
+    <h3>Application Form</h3>
+  <br><br>
+  <div class="col-md-4">
+    <label for="name" class="form-label">Name</label>
+    <input type="text" id="name" placeholder="Enter your name" class="form-control" required/>
+  </div>
+<br>
+  <div class="col-md-4">
+    <label for="dob" class="form-label">Date of Birth</label>
+    <input type="date" id="dob" class="form-control" required/>
+  </div>
+<br>
+  <div class="col-md-4">
+    <label for="age" class="form-label">Age</label>
+    <input type="number" id="age" placeholder="Age" class="form-control" required/>
+  </div>
+<br>
+<div class="col-md-12">
+    <label class="form-check-label">Gender</label>
+
+  <div class="form-checks">
+  <input type="radio" name="gender" value="male" class="form-check-input" id="male" required/>
+    <label for="male" class="form-check-label">Male</label>
+  </div>
+  <div class="form-checks">
+  <input type="radio" name="gender" value="female" class="form-check-input" id="female" required>
+    <label for="female" class="form-check-label">Female</label>
+  </div>
+  <div class="form-checks">
+   <input type="radio" name="gender" value="other" class="form-check-input" id="other" required>
+    <label for="other" class="form-check-label">Other</label>
+  </div>
+  </div>
+<br>
+  <div class="col-md-6">
+    <label class="form-label" >Phone Number</label>
+    <input type="tel" class="form-control"  placeholder="&#x260E"  required/>
+  </div>
+<br>
+  <div class="col-md-6" >
+    <label class="form-label">Mail id</label>
+    <input type="email" placeholder="&#9993"  class="form-control" required/>
+  </div>
+<br>
+  <div class="col-md-12">
+    <label  class="form-label">Address</label>
+    <textarea  rows="5" cols="50" class="form-control"   placeholder="1234 Main St..." required></textarea>
+  </div>
+
+<br>
+  <div class="col-md-4">
+    <label for="district" class="form-label">District</label>
+    <select  class="form-select" name="district" id="district" onchange=changeDropdownValue(this.value) required>
+        <option value="" disabled selected>--- Choose district ---</option>
+      <option value="Thiruvananthapuram">Thiruvananthapuram</option>
+      <option value="Kollam">Kollam</option>
+        <option value="Pathanamthitta">Pathanamthitta</option>
+      <option value="Alappuzha">Alappuzha</option>
+        <option value="Kottayam">Kottayam</option>
+      <option value="Idukki">Idukki</option>
+        <option value="Ernakulam">Ernakulam</option>
+      <option value="Thrissur">Thrissur</option>
+        <option value="Palakkad">Palakkad</option>
+      <option value="Malappuram">Malappuram</option>
+        <option value="Kozhikode">Kozhikode</option>
+      <option value="Wayanad">Wayanad</option>
+        <option value="Kannur">Kannur</option>
+      <option value="Kasargod">Kasargod</option>
+    </select>
+  </div>
+<br>
+  <div class="col-md-4">
+    <label for="branch" class="form-label">Branch</label>
+    <select  name="branch" id="branch" class="form-select" >
+    <option value="" disabled selected>--- Choose branch ---</option>
+    </select>
+  </div>
+<br>
+
+  <div class="col-md-4">
+    <label for="check" class="form-label">Account Type</label>
+    <select  class="form-select" id="check" required>
+        <option value="" disabled selected>--- Choose account ---</option>
+      <option>Saving Account</option>
+      <option>Current Account</option>
+      <option>Salary Account</option>
+      <option>NRI Account</option>
+    </select>
+    </div>
+  <br>
+   <div class="col-md-12">
+      <label class="form-check-label">Materials Provided</label>
+     <br>
+     <div class="form-check">
+      <label class="form-check-label" >Debit card</label>
+       <input class="form-check-input" type="checkbox">
+    </div>
+
+      <div class="form-check">
+        <label class="form-check-label" >Credit card</label>
+        <input class="form-check-input" type="checkbox">
+
+     </div>
+
+      <div class="form-check">
+        <label class="form-check-label" >Cheque book</label>
+        <input class="form-check-input" type="checkbox">
+      </div>
+
+  </div>
+  <br>
+
+  <div class="col-md-8">
+    <button type="submit" class="btn btn-primary" >Submit</button>
+    <br>
+     <a href="/" class="btn btn-primary">Logout</a>
+  </div>
+
+
+</form>
+</div>
+
+
+<script>
+var districtValues ={
+    Thiruvananthapuram:["Kazhakuttom","Attingal","Varkala","Pattom","Pothencode"],
+     Kollam :["Kottiyam","Anchal","Karunagapally","Kottarakara","Paripally"],
+     Pathanamthitta:["Adoor","Thiruvalla","Thodupuzha","Konni"],
+     Alappuzha:["Haripad","Chengannur","Ambalapuzha","Cherthala"],
+     Kottayam:["Changanasherry","Vaikom","Pala","Kaloor"],
+     Idukki:["Munnar","Mavelikkara","Kattapana","Vagamon"],
+     Ernakulam:["Aluva","Edapally","Angamally","Thevara","Kakanad"],
+     Thrissur:["Chalakudy","Kodungallur","Guruvayur","Irinjalakuda"],
+     Palakkad:["Ottapalam","Pattambi","Shoranur","Alathur"],
+     Malappuram:["Ponnani","Manjeri","Pallikal","Nilambur"],
+     Kozhikode:["Beypore","Koyilandy","Vatakara"],
+     Wayanad:["Sulthan Bathery","Kanjirangal","Lakkidi"],
+     Kannur:["Payyanur","Sreekandapuram"],
+     Kasargod:["Bekal","Kannangad","Nileshwaram","Thrikaripur"],
+}
+
+function changeDropdownValue(value){
+   if(value.length == 0){
+      document.getElementById("branch").innerHTML="<option></option>";
+   }else{
+        var districtOptions = "";
+        for(branchID in districtValues[value])
+           {
+              districtOptions +="<option>" + districtValues[value][branchID] + "</option>"
+            }
+             document.getElementById("branch").innerHTML=districtOptions
+       }
+
+
+   }
+
+</script>
+
+</body>
+</html>
+

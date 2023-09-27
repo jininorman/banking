@@ -1,0 +1,60 @@
+/* button after login
+Button In open.html*/
+
+a.button {
+  font-size: 18px;
+  border-radius: 25px;
+  padding: 15px 25px;
+  background-color: #24a0ed;;
+  border: 2px solid white;
+position:absolute;
+align-items:center;
+justify-content:center;
+display:flex;
+text-transform:uppercase;
+text-decoration:none;
+margin-top:290px;
+margin-left:680px;
+cursor: pointer;
+font-family:cursive;
+  color: white;
+  font-weight: 600;
+  letter-spacing: 1px;
+  -webkit-transition: all 0.3s ease 0s;
+  -moz-transition: all 0.3s ease 0s;
+  -o-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
+}
+
+a.button:hover {
+  background-color: white;
+  color: blue;
+}
+
+/* After filling Application form
+application accepted message */
+
+.hello h3{
+background:lightgrey;
+padding:15px 25px;
+width:100%;
+font-family:monospace;
+font-weight:800;
+font-size:22px;
+margin-top:320px;
+margin-left:auto;
+position:absolute;
+display:flex;
+justify-content:center;
+}
+
+
+.hello a{
+margin-left:10px;
+color:blue;
+}
+
+.hello a:hover{
+color:crimson;
+text-decoration:none;
+}
